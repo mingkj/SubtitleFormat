@@ -4,23 +4,24 @@ window.onload = function () {
 
     document.getElementById("file").addEventListener('change', fileSelect, false);
 }
-function enterkey() {
+// function enterkey() {
+var enterkey = function () {
     // enter 13, whitespace 20
     if (event.keyCode == 32) { format(); }
 }
 
 // 格式化字幕文件
-function format() {
+// function format() {
+var format = function () {
     var subtitle = ' ';
-    // 参数的个数为 1 的时候
+    // 1个参数的 的时候
     if (arguments.length === 1) {
         subtitle = arguments[0];
-        // console.log("arguments");
     }
     // 无参数的时候
-    else {
+    else  {
         subtitle = document.getElementById("input").value;
-        // console.log("subtile ")
+        // console.log(arguments[0]);// undefined
     }
     // var subtitle = document.getElementById("input").value;
 
@@ -45,17 +46,17 @@ function format() {
 // 文件选择
 function fileSelect(evt) {
     var files = this.files;
-   /* var fileName = '';
-    // var html=new Array();
-    for (var i = 0, l = files.length; i < l; i++) {
-        var file = files[i];
-
-        fileName += '<p>' + file.name + ' - ' + file.size + ' bytes' + '</p>';
-
-    }
-
-    // console.log(fileName);
-    document.getElementById("file-list").innerHTML = fileName;*/
+    /* var fileName = '';
+     // var html=new Array();
+     for (var i = 0, l = files.length; i < l; i++) {
+         var file = files[i];
+ 
+         fileName += '<p>' + file.name + ' - ' + file.size + ' bytes' + '</p>';
+ 
+     }
+ 
+     // console.log(fileName);
+     document.getElementById("file-list").innerHTML = fileName;*/
 
     var reader = new FileReader();
     reader.readAsText(files[0], "UTF-8");
