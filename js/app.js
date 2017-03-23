@@ -4,7 +4,7 @@ window.onload = function() {
 
         document.getElementById("file").addEventListener('change', fileSelect, false);
     }
-// function enterkey() {
+
 var enterkey = function() {
     if (event.keyCode == 32) { format(); }
 }
